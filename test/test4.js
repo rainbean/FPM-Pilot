@@ -8,7 +8,7 @@ lineReader.eachLine("../db/marketbasket.csv", function(line) {
   var items = [];
   if (isheader) {
     for(var i in arr) {
-	  items.push(S(arr[i]).trim().s);
+	  items.push({id: i, text: S(arr[i]).trim().s});
     }
 
     isheader = false;

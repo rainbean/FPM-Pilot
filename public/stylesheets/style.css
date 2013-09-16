@@ -1,0 +1,74 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.usernameblock {
+  font-size: 125%;
+  float:right;
+  margin-top: -3px;
+}
+/*
+.usernameblock > select {
+  font-size: 1em;
+  border: 1px solid black;
+}
+.usernameblock > input {
+  font-size: 1em;
+  border: 1px solid black;
+}
+*/
+.usernameblock > button {
+  background-color: #7c5b2b;
+  color: #FFFFFF;
+}
+.usernameblock > button:hover {
+  background-color: #805d2c;
+}
+.usernameblock > button:disabled {
+  background-color: #f4f5f5;
+}
+
+#fwcontainer {
+  width: 980px;
+  padding-top: 1em;
+  margin: 0 auto;
+}
+#metacontainer{
+  float: left;
+  width: 100%;
+  font-size: 125%;
+  padding-top: 1em;
+}
+#metacontainer2{
+  position: absolute;
+  right: 12px;
+  width: 450px;
+  height: 100%;
+  font-size: 125%;
+}
+#bdcontainer {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+iframe {
+  width: 100%; 
+  height: 430px;
+  scrolling: no;
+  frameborder: 0;
+}
+
+/*
+ * Row highlighting example
+ */
+#movies tbody tr.even:hover, #movies tbody tr.even td.highlighted {
+	background-color: #ECFFB3;
+}
+
+#movies tbody tr.odd:hover, #movies tbody tr.odd td.highlighted {
+	background-color: #E6FF99;
+}
+
