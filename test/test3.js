@@ -36,7 +36,42 @@ while(match = regex.exec(line)) {
 fp[key] = value;
 }).then(function () {
   fs.writeFile("fp.json", JSON.stringify(fp));
-//console.log(JSON.stringify(fp[0]));
-//console.log(JSON.stringify(fp[1]));
+  console.log(JSON.stringify(fp[44].listsub([44,132],1)));
+  console.log(JSON.stringify(fp[44].listsub([44,110,132,141,175])));
 });
 
+// attach the .contains method to Array's prototype to call it on any array
+Array.prototype.contains = function (array, sizediff) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return false;
+
+    // compare lengths - can save a lot of time
+    if (this.length <= array.length)
+        return false;
+
+	if (sizediff && this.length > array.length + sizediff)
+		return false;
+
+    for (var i = 0; i < array.length; i++) {
+        if (this.indexOf(array[i]) == -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// attach the .listsub method to Array's prototype to call it on any array
+Array.prototype.listsub = function (array, sizediff) {
+    // if the other array is a falsy value, return
+    if (!array)
+        return null;
+
+	var match = [];
+    for (var i = 0; i < this.length; i++) {
+        if (this[i].contains(array, sizediff)) {
+            match.push(this[i]);
+        }
+    }
+    return match;
+}
