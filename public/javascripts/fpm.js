@@ -6,9 +6,16 @@ function fnFetchItems() {
     $('#items-combobox').combobox({
       data:items,
       valueField:'id',
-      textField:'text'
+      textField:'text',
+      onSelect: fnSelectItemCB
     });
   });
+}
+
+function fnSelectItemCB(item) {
+  console.log(item);
+  //var url = 'get_data2.php?id='+item.id;
+  //$('#cc2').combobox('reload', url);
 }
 
 function fnDocumentReadyCB() {

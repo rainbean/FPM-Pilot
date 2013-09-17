@@ -1,74 +1,76 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: "Microsoft JhengHei", Pmingliu, "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, "sans-serif";
+  color: #000;
+  direction: ltr;
+  font-size: 88%;
+  -webkit-font-smoothing: antialiased;
+  background-color: #FFF;
 }
 a {
   color: #00b7ff;
 }
-.usernameblock {
-  font-size: 125%;
-  float:right;
-  margin-top: -3px;
-}
-/*
-.usernameblock > select {
-  font-size: 1em;
-  border: 1px solid black;
-}
-.usernameblock > input {
-  font-size: 1em;
-  border: 1px solid black;
-}
-*/
-.usernameblock > button {
-  background-color: #7c5b2b;
-  color: #FFFFFF;
-}
-.usernameblock > button:hover {
-  background-color: #805d2c;
-}
-.usernameblock > button:disabled {
-  background-color: #f4f5f5;
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: normal;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 0 0 0.35em 0px;
 }
 
-#fwcontainer {
-  width: 980px;
-  padding-top: 1em;
-  margin: 0 auto;
+.s9_title {
+  color: #E47911;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 1em;
+  border-bottom: 1px solid #ddd;
 }
-#metacontainer{
+
+.container {
+  border-bottom: 1px dotted #DDD;
+  vertical-align: baseline;
+  padding-bottom: 19px;
+}
+
+.viewed_container {
+  width: 16.666666666666668%!important;
   float: left;
-  width: 100%;
-  font-size: 125%;
-  padding-top: 1em;
-}
-#metacontainer2{
-  position: absolute;
-  right: 12px;
-  width: 450px;
-  height: 100%;
-  font-size: 125%;
-}
-#bdcontainer {
-  width: 1100px;
-  margin: 0 auto;
+  border: 0;
+  vertical-align: baseline;
 }
 
-iframe {
-  width: 100%; 
-  height: 430px;
-  scrolling: no;
-  frameborder: 0;
+.viewed_header {
+  height: 15px;
+  margin-bottom: auto;
+  color: #666;
+  padding: 2px 6px 2px 6px;
+  font-size: 11px;
+  line-height: 15px;
+  background: #FAFAFA;
 }
 
-/*
- * Row highlighting example
- */
-#movies tbody tr.even:hover, #movies tbody tr.even td.highlighted {
-	background-color: #ECFFB3;
+.viewed_body_outter {
+  float: left;
+  margin-top: 10px;
+  width: 100%!important;
+  overflow: hidden;
 }
 
-#movies tbody tr.odd:hover, #movies tbody tr.odd td.highlighted {
-	background-color: #E6FF99;
+.viewed_body_inner {
+  margin-left: 7px;
+  margin-right: 7px;
 }
-
+.viewed_body {
+  position: relative;
+  zoom: 1;
+  margin-top: 4px;
+}
+.viewed_text {
+  display: block !important;
+}
