@@ -39,7 +39,7 @@ h2 {
 }
 
 .viewed_container {
-  width: 16.666666666666668%!important;
+  width: 15%!important;
   float: left;
   border: 0;
   vertical-align: baseline;
@@ -71,6 +71,33 @@ h2 {
   zoom: 1;
   margin-top: 4px;
 }
-.viewed_text {
+.item_text {
   display: block !important;
 }
+
+.item_text2 {
+  position: relative;
+  width: 16%;
+  float: left;
+}
+.other_container {
+  float: left;
+  margin-right: -5px;
+  width: 85%!important;
+  float: left;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.other_header {
+  height: 15px;
+  margin-bottom: auto;
+  color: #666;
+  padding: 2px 6px 2px 6px;
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px dotted #DDD;
+  background: #FFF;
+}
+
+

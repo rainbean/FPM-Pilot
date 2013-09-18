@@ -1,4 +1,5 @@
 var items; // items database reference
+var fpm; // fpm database reference
 
 function fnFetchItems() {
   $.getJSON( "/items", function(data) {
@@ -12,13 +13,23 @@ function fnFetchItems() {
   });
 }
 
+function fnFetchFPM() {
+  $.getJSON( "/fp", function(data) {
+    fpm = data; // keep userlist in case
+  });
+}
+
 function fnSelectItemCB(item) {
-  console.log(item);
-  //var url = 'get_data2.php?id='+item.id;
-  //$('#cc2').combobox('reload', url);
+  //console.log(item);
+  $('#placeholder').show();
+  $('#viewed_text').text(item.text);
+  $('#next_text span').text(function (index) {
+    return "item number " + ( index + 1 );
+  });
 }
 
 function fnDocumentReadyCB() {
   // get items list
   fnFetchItems();
+  fnFetchFPM();
 }
