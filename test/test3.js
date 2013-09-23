@@ -36,9 +36,10 @@ while(match = regex.exec(line)) {
 fp[key] = value;
 }).then(function () {
   fs.writeFile("fp.json", JSON.stringify(fp));
-  console.log(JSON.stringify(fp[44].listsub([44,132],1)));
-  console.log(JSON.stringify(fp[44].joinsub([44,132],1)));
-  console.log(JSON.stringify(fp[44].listsub([44,110,132,141,175])));
+  //console.log(JSON.stringify(fp[44].listsub([44,132],1)));
+  //console.log(JSON.stringify(fp[44].joinsub([44,132],1)));
+  //console.log(JSON.stringify(fp[44].listsub([44,110,132,141,175])));
+  console.log(JSON.stringify(fp[0].joinsub([0, 141], 1)));
 });
 
 // attach the .contains method to Array's prototype to call it on any array

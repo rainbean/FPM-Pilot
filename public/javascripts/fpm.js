@@ -75,16 +75,33 @@ function fnFetchFPM() {
   });
 }
 
+var stack = [];
+function onSelectNextCB(id) {
+  stack.push(id);
+  //console.log(stack);
+  var t = $('#viewed_text').html();
+  $('#viewed_text').html(t + '<br>' + items[id].text);
+  fnInsertNextItems(id);
+  return false;
+}
+
 function fnSelectItemCB(item) {
-  //console.log(item);
+  stack = [item.id];
   $('#placeholder').show();
   $('#viewed_text').text(item.text);
-  var list = fpm[item.id].joinsub([item.id],1);
-  $('#next_text span').text(function (index) {
+  fnInsertNextItems(item.id);
+}
+
+function fnInsertNextItems(id) {
+  var list = fpm[stack[0]].joinsub(stack,1);
+  //console.log(list);
+  $('#next_text span').html(function (index) {
     if (!list || index >= list.length)
       return '';
 
-    return items[list[index]].text;
+    var next = list[index];
+    var text = items[list[index]].text;
+    return '<a href="#" onclick="javascript:onSelectNextCB(' + next + ')">' + text +'</a>';
   });
 }
 
