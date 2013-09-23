@@ -8,10 +8,11 @@ lineReader.eachLine("../db/marketbasket.csv", function(line) {
   var items = [];
   if (isheader) {
     for(var i in arr) {
-	  items.push({id: i, text: S(arr[i]).trim().s});
+	  items.push({id: parseInt(i), text: S(arr[i]).trim().s});
     }
 
     isheader = false;
+	console.log(items[0]);
 	fs.writeFile("items.json", JSON.stringify(items));
     return false;
   } else {

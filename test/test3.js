@@ -37,6 +37,7 @@ fp[key] = value;
 }).then(function () {
   fs.writeFile("fp.json", JSON.stringify(fp));
   console.log(JSON.stringify(fp[44].listsub([44,132],1)));
+  console.log(JSON.stringify(fp[44].joinsub([44,132],1)));
   console.log(JSON.stringify(fp[44].listsub([44,110,132,141,175])));
 });
 
@@ -74,4 +75,23 @@ Array.prototype.listsub = function (array, sizediff) {
         }
     }
     return match;
+}
+
+// attach the .joinsub method to Array's prototype to call it on any array
+Array.prototype.joinsub = function (array, sizediff) {
+  // if the other array is a falsy value, return
+  if (!array)
+    return null;
+
+  var match = [];
+  for (var i = 0; i < this.length; i++) {
+    if (this[i].contains(array, sizediff)) {
+      for (var j = 0; j < this[i].length; j++) {
+        if (array.indexOf(this[i][j]) == -1) {
+            match.push(this[i][j]);
+        }
+      }
+    }
+  }
+  return match;
 }
